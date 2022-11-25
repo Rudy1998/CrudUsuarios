@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+
+	<h1>Alta de Usuarios</h1>
+	<br>
+		<a th:href="@{/ctrl/Usuarios/inicio}">Regresar</a>
+	<br>
+	<br>
+	<form th:action="@{/ctrl/Usuarios/guardar}" method="post" th:object="${usuarios}">
+		<label for = "idUsuarios">Id Usuarios</label>
+		<input type="number" name = "idUsuarios" th:field="*{idUsuarios}">
+		<br>
+		<label for = "nombre">Nombre</label>
+		<input type="text" name = "nombre" th:field="*{nombre}">
+		<br>
+		<label for = "app">App</label>
+		<input type="text" name = "app" th:field="*{app}">
+		<br>
+		<label for = "edad">Edad</label>
+		<input type="number" name = "edad" th:field="*{edad}">
+		<br>
+		<label for = "continente">Email</label>
+		<input type="text" name = "email" th:field="*{email}">
+		<br>
+		<input type="submit" name="guardar" value="Guardar">
+	</form>
+</body>
+</html>

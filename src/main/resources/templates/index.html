@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<h1>Gestion de Usuarios</h1>
+	<br>
+		<a th:href="@{/ctrl/Usuarios/abrirGuardar}">Guardar</a>
+	<br>
+	<br>
+	<table border = "4">
+		<thead>
+			<tr>
+				<th>Id Usuarios</th>
+				<th>Nombre</th>
+				<th>App</th>
+				<th>Edad</th>
+				<th>Email</th>
+				<th>Editar</th>
+				<th>Eliminar</th>
+				
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="p:${listaV}">
+				<td th:text="${p.idUsuarios}">Id Usuarios</td>
+				<td th:text="${p.nombre}">Nombre</td>
+				<td th:text="${p.app}">App</td>
+				<td th:text="${p.edad}">Edad</td>
+				<td th:text="${p.email}">Email</td>
+				<td><a th:href="@{/ctrl/Usuarios/abrirEditar/}+${p.idUsuarios}" th:text="Editar"></a></td>
+				<td><a th:href="@{/ctrl/Usuarios/abrirEliminar/}+${p.idUsuarios}" th:text="Eliminar"></a></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
